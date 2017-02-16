@@ -274,7 +274,7 @@ abstract class MediaPlaylistTagWriter extends ExtTagWriter {
                 @Override
                 public String write(EncryptionData encryptionData) throws ParseException {
                     //TODO check for version 5
-                    return WriteUtil.writeQuotedString(encryptionData.getKeyFormat(), getTag());
+                    return WriteUtil.writeQuotedString(encryptionData.getKeyFormat(), getTag(), true);
                 }
             });
 
@@ -287,7 +287,7 @@ abstract class MediaPlaylistTagWriter extends ExtTagWriter {
                 @Override
                 public String write(EncryptionData encryptionData) throws ParseException {
                     //TODO check for version 5
-                    return WriteUtil.writeQuotedString(WriteUtil.join(encryptionData.getKeyFormatVersions(), Constants.LIST_SEPARATOR), getTag());
+                    return WriteUtil.writeQuotedString(WriteUtil.join(encryptionData.getKeyFormatVersions(), Constants.LIST_SEPARATOR), getTag(), true);
                 }
             });
         }
